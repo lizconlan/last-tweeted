@@ -1,2 +1,10 @@
+%h2
+  =@twitterer.screen_name
+
+%h3 Last Tweeted
+
 %p
-  =@twitterer.name
+  -if @twitterer.last_tweeted.nil?
+    This user has protected their updates
+  - else
+    =@twitterer.last_tweeted
